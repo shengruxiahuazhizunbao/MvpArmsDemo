@@ -16,18 +16,14 @@ public class UserActivity extends BaseActivity<UserPresenter>  implements  UserC
     @Override
     public void setAdapter(DefaultAdapter adapter) {
     }
-
     @Override
     public void startLoadMore() {
     }
-
     @Override
     public void endLoadMore() {
     }
-
     @Override
     public void setupActivityComponent(AppComponent appComponent) {
-        
     }
     @Override
     public int initView(Bundle savedInstanceState) {
@@ -36,23 +32,19 @@ public class UserActivity extends BaseActivity<UserPresenter>  implements  UserC
     @Override
     public void initData(Bundle savedInstanceState) {
     }
-
     @Override
     public void showLoading() {
     }
-
     @Override
     public void hideLoading() {
     }
     @Override
     public void showMessage(String message) {
     }
-
     @Override
     public void launchActivity(Intent intent) {
 
     }
-
     @Override
     public void killMyself() {
 

@@ -2,11 +2,14 @@ package ar.toprs.com.mvparmsdemo;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Message;
 import android.support.v4.app.FragmentManager;
 
 import com.jess.arms.base.delegate.AppLifecycles;
 import com.jess.arms.http.GlobalHttpHandler;
+import com.jess.arms.integration.AppManager;
 import com.jess.arms.integration.ConfigModule;
+import com.jess.arms.utils.ArmsUtils;
 
 import java.util.List;
 
@@ -21,6 +24,7 @@ public class GlobalConfigModule  implements ConfigModule {
         //使用builder可以为框架配置一些配置信息
 //        builder.baseurl(Api.APP_DOMAIN)
 //                .cacheFile(New File("cache"));
+        
         
        
     }
@@ -38,7 +42,19 @@ public class GlobalConfigModule  implements ConfigModule {
 
             @Override
             public void onCreate(Application application) {
-
+                ArmsUtils.obtainAppComponentFromContext(application)
+                        .appManager().setHandleListener(new AppManager.HandleListener() {
+                    @Override
+                    public void handleMessage(AppManager appManager, Message message) {
+                        switch (message.what){
+                            case 0:
+                                break;
+                            
+                        }
+                    }
+                });
+                
+                
             }
 
             @Override
