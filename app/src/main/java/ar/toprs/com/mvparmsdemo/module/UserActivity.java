@@ -33,25 +33,19 @@ public class UserActivity extends BaseActivity<UserPresenter>  implements  UserC
     public int initView(Bundle savedInstanceState) {
        return  0;
     }
-
     @Override
     public void initData(Bundle savedInstanceState) {
-
     }
 
     @Override
     public void showLoading() {
-
     }
 
     @Override
     public void hideLoading() {
-
     }
-
     @Override
     public void showMessage(String message) {
-
     }
 
     @Override

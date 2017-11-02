@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.v4.app.FragmentManager;
 
 import com.jess.arms.base.delegate.AppLifecycles;
+import com.jess.arms.http.GlobalHttpHandler;
 import com.jess.arms.integration.ConfigModule;
 
 import java.util.List;
@@ -20,11 +21,32 @@ public class GlobalConfigModule  implements ConfigModule {
         //使用builder可以为框架配置一些配置信息
 //        builder.baseurl(Api.APP_DOMAIN)
 //                .cacheFile(New File("cache"));
+        
+       
     }
-
+      
     @Override
     public void injectAppLifecycle(Context context, List<AppLifecycles> lifecycles) {
 //向Application的生命周期中注入一些自定义逻辑
+        lifecycles.add(new AppLifecycles() {
+            
+            
+            @Override
+            public void attachBaseContext(Context base) {
+                
+            }
+
+            @Override
+            public void onCreate(Application application) {
+
+            }
+
+            @Override
+            public void onTerminate(Application application) {
+
+            }
+        });
+        
     }
 
     @Override
